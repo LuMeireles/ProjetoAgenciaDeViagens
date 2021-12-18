@@ -1,0 +1,48 @@
+BancoDeDados(model)
+public class BancoDeDados : DbContext
+    {
+        public DbSet<Passagem> Livro { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder OptionBuilder) 
+        {
+            OptionBuilder.UseSqlServer(connectionString: @"Server=(localdb)\mssqllocaldb;Database=AgenciaDeViagens;Integrated Security=true");
+        }
+    }
+
+Passagem(model)
+
+public class Passagem
+    {
+        [Key]
+
+        public int id { get; set; }
+
+        public string Destino { get; set; }
+
+        public string preco { get; set; }
+
+        public string DataPartida { get; set; }
+        [Required]
+        public int GuiaTuristico_Guia { get; set; }
+        public GuiaTuristico Guia { get; set; }
+
+        public Cliente cliente { get; set; }
+
+
+GuiaTuristico(model)
+
+public class GuiaTuristico
+    {
+        [Key]
+        public int id { get; set; }
+
+        public string Nome { get; set; }
+
+        public string Telefone { get; set; }
+
+        [Required]
+
+        public string Cadastur { get; set; }
+
+        public string FalarIdiomas { get; set; }
+    }
