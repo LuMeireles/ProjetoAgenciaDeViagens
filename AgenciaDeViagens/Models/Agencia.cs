@@ -19,5 +19,6 @@ namespace AgenciaDeViagens.Models
         public string Endereco { get; set; }
         [Required]
         public string GuiaTuristico { get; set; }
+
     }
 }

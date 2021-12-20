@@ -23,7 +23,7 @@ namespace AgenciaDeViagens.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Destino()
         {
             return View();
         }

@@ -4,12 +4,10 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
-
-<h4>Passagem</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<h1>Pacote</h1>
+<h3>Destinos para se aventurar pelo Brasil</h3>
+<hr>
+        <!--FORMULÁRIO DE COMPRA-->
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -29,22 +27,28 @@
             </div>
             <div class="form-group">
                 <label asp-for="AgenciaCadastur" class="control-label"></label>
-                <select asp-for="AgenciaCadastur" class ="form-control" asp-items="ViewBag.AgenciaCadastur"></select>
+                <select asp-for="AgenciaCadastur" class="form-control" asp-items="ViewBag.AgenciaCadastur"></select>
             </div>
             <div class="form-group">
                 <label asp-for="ClienteId" class="control-label"></label>
-                <select asp-for="ClienteId" class ="form-control" asp-items="ViewBag.ClienteId"></select>
+                <select asp-for="ClienteId" class="form-control" asp-items="ViewBag.ClienteId"></select>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Comprar" class="btn btn-primary" />
             </div>
         </form>
     </div>
-</div>
+ </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Voltar a lista</a>
 </div>
+<footer id="rodape" class="border-top footer text-muted">
+    <div class="container text-center">
+        <img width=20% src="~/imagem/Bandeira-dos-Cartões-e-Boleto.png" alt="Formas de pagamento">
+        <p>&copy; 2021 - AgenciaDeViagens </p>
+    </div>
+</footer>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
